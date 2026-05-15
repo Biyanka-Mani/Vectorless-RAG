@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.vscode/
+.idea/
+*.ipynb_checkpoints
+check_docs.py
+check_tree.py
+inspect_client.py
+lessonplan.pdf
+water.pdf
