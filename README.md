@@ -26,21 +26,19 @@ The `main.py` script follows a structured "Search-Retrieve-Generate" flow:
 ## 🛠 Internal Method Glossary
 
 ### Page Index API Methods
-- `list_documents()`: Used to scan the account and find existing PDFs. This prevents redundant uploads and preserves your page limits.
+- `list_documents()`: Used to scan the account and find existing PDFs. This prevents redundant uploads and preserves  page limits.
 - `get_tree(doc_id, node_summary=True)`: Retrieves the entire document hierarchy. It includes titles, page numbers, full text, and semantic summaries for every section.
 - `get_document(doc_id)`: Checks the indexing status to ensure the document is ready for queries.
 
 ### Pipeline Helper Methods
 - `flatten_tree(nodes)`: A recursive function that transforms the nested tree into a flat `ID -> Content` dictionary. This is why we don't need a `get_node` API call; the text is already locally available for $O(1)$ lookup.
 - `get_slim_tree(nodes)`: Removes the heavy `text` fields from the tree, leaving only IDs, Titles, and Summaries. This is sent to the LLM in Step 1 to save **70-90% in token costs**.
-- `find_existing_document(filename)`: A smart matching helper that finds your file on the server by name.
+- `find_existing_document(filename)`: A smart matching helper that finds  file on the server by name.
 
 ---
 
 ## 🌐 OpenRouter Integration
 This project uses **OpenRouter** to access high-quality LLMs for free.
-- **Model:** `google/gemini-2.0-flash-lite-preview-02-05:free` (or other verified free models).
-- **Benefit:** Allows you to run the entire RAG pipeline without incurring costs or hitting OpenAI quota limits.
 
 ---
 
@@ -61,4 +59,4 @@ This project uses **OpenRouter** to access high-quality LLMs for free.
    ```bash
    python main.py
    ```
-in action.
+
