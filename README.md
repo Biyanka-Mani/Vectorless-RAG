@@ -61,5 +61,4 @@ This project uses **OpenRouter** to access high-quality LLMs for free.
    ```bash
    python main.py
    ```
-
-The script will identify your `lessonplan.pdf`, load its structure, and enter an interactive chat mode where you can ask questions and see the 3-step RAG process in action.
+in action.
